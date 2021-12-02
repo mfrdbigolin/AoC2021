@@ -3,7 +3,10 @@
   - SPDX-License-Identifier: MIT
   -->
 
-# *AoC2021*: My Advent of Code 2021 Solutions [![Public license](https://img.shields.io/badge/MIT_(Expat)-yellow?logo=spdx&logoColor=white)](./LICENSE) [![Programming Language](https://img.shields.io/badge/Julia_Language-red?logo=julia&logoColor=white)](https://julialang.org/)
+# *AoC2021*: My Advent of Code 2021 Solutions
+
+[![Public license](https://img.shields.io/badge/MIT_(Expat)-yellow?logo=spdx&logoColor=white)](./LICENSE)
+[![Programming Language](https://img.shields.io/badge/Julia_Language-red?logo=julia&logoColor=white)](https://julialang.org/)
 
 My Julia solutions to [Advent of Code 2021](https://adventofcode.com/2021/)
 (also known as *AoC2021*) in this most bright time of the year.
