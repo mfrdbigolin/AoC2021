@@ -8,7 +8,7 @@
 
 module Utils
 
-export arrange, usage_and_exit
+export arrange, usage_and_exit, bin2dec
 
 arrange(vs :: Vector, dtype = String) = [parse(dtype, v) for v in vs]
 
@@ -19,5 +19,7 @@ function usage_and_exit(is_exit = true)
         exit(1)
     end
 end
+
+bin2dec(B :: Array) = sum((*).(B, (^).(2, (length(B) - 1):-1:0)))
 
 end
