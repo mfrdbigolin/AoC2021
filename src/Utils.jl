@@ -8,7 +8,7 @@
 
 module Utils
 
-export arrange, usage_and_exit, bin2dec
+export arrange, usage_and_exit, bin2dec, ∑
 
 arrange(vs :: Vector, dtype = String) = [parse(dtype, v) for v in vs]
 
@@ -21,5 +21,8 @@ function usage_and_exit(is_exit = true)
 end
 
 bin2dec(B :: Array) = sum((*).(B, (^).(2, (length(B) - 1):-1:0)))
+
+"Summation of all integer numbers between [0, n]."
+∑(n :: Int64) = (n^2 + n)/2
 
 end
