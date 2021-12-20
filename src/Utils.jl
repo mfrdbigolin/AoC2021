@@ -20,7 +20,7 @@ function usage_and_exit(is_exit = true)
     end
 end
 
-bin2dec(B :: Array) = sum((*).(B, (^).(2, (length(B) - 1):-1:0)))
+bin2dec(B :: AbstractArray) = sum((*).(B, (^).(2, (length(B) - 1):-1:0)))
 
 "Summation of all integer numbers between [0, n]."
 ∑(n :: Int64) = (n^2 + n)/2
