@@ -16,6 +16,13 @@ is, they could be used to solve similar problems, with a bit of
 tweaking.  Elegance, readability, and efficiency, in this order, are also my
 concerns, though secondary after generality.
 
+## External Packages
+
+Install the following Julia packages, if necessary.
+
+* [`DataStructures.jl`](https://github.com/JuliaCollections/DataStructures.jl):
+used only in day fifteen.
+
 ## Usage
 
 For each day *N* use either
