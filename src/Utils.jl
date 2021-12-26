@@ -8,7 +8,7 @@
 
 module Utils
 
-export arrange, usage_and_exit, bin2dec, ∑, array2num, find_neighbors
+export arrange, usage_and_exit, bin2dec, ∑, array2num, find_neighbors, find_all_neighbors
 
 arrange(vs :: Vector, dtype = String) = [parse(dtype, v) for v in vs]
 
@@ -33,7 +33,26 @@ function find_neighbors(A :: AbstractMatrix, (i, j) :: Tuple{Int, Int})
     neighbors = Array{Tuple{Int, Int}}([])
     idxs = CartesianIndices(A)
 
-    for idx in [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]
+    axial = [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]
+
+    for idx in axial
+        if CartesianIndex(idx) in idxs
+            push!(neighbors, idx)
+        end
+    end
+
+    return neighbors
+end
+
+"Find all the neighbors of `(i, j)` in the matrix `A`."
+function find_all_neighbors(A :: AbstractMatrix, (i, j) :: Tuple{Int, Int})
+    neighbors = Array{Tuple{Int, Int}}([])
+    idxs = CartesianIndices(A)
+
+    axial = [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]
+    diagonal = [(i - 1, j - 1), (i - 1, j + 1), (i + 1, j - 1), (i + 1, j + 1)]
+
+    for idx in [axial; diagonal]
         if CartesianIndex(idx) in idxs
             push!(neighbors, idx)
         end
