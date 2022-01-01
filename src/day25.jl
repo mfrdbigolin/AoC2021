@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Twenty-Five, Sea Cucumber."

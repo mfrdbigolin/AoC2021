@@ -1,13 +1,13 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Eighteen, Snailfish."
 
 
 #= This day really took me some time, I had to rewrite the code twice, because
- = I was unatentive to one of the conditions of the problem (the order of the
+ = I was inattentive to one of the conditions of the problem (the order of the
  = operations).  Alas, Julia’s typesystem didn’t helped me that much either.
  =#
 
