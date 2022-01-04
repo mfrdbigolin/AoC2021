@@ -3,7 +3,7 @@
 # Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
-"Day Three, Binary Diagnostic"
+"Day Three, Binary Diagnostic."
 
 
 include("Utils.jl")
@@ -24,7 +24,7 @@ function calculate_rating(nums, op, i = 1)
     return calculate_rating(triaged_nums, op, i + 1)
 end
 
-function solve(nums)
+function solve1(nums)
     k = size(nums, 2)
 
     ϵ = [calculate_rate(nums, <, i) for i in 1:k] |> bin2dec
@@ -40,15 +40,19 @@ function solve2(nums)
     return O₂ * CO₂
 end
 
-if abspath(PROGRAM_FILE) == @__FILE__
+function main()
     usage_and_exit(length(ARGS) != 1)
 
     input_data = readlines(ARGS[1])
     matrix_data = parse.(Int, hcat(collect.(input_data)...))'
 
-    @assert solve(matrix_data) == 3985686
+    @assert solve1(matrix_data) == 3985686
     @assert solve2(matrix_data) == 2555739
 
-    println(solve(matrix_data))
+    println(solve1(matrix_data))
     println(solve2(matrix_data))
+end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main()
 end

@@ -31,7 +31,7 @@ end
 
 const INSTR_REG = r"(forward|down|up) (\d+)"
 
-if abspath(PROGRAM_FILE) == @__FILE__
+function main()
     usage_and_exit(length(ARGS) != 1)
 
     input_data = [match(INSTR_REG, dir).captures for dir in readlines(ARGS[1])]
@@ -39,4 +39,8 @@ if abspath(PROGRAM_FILE) == @__FILE__
 
     println(solve(typed_data))
     println(solve(typed_data, true))
+end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main()
 end

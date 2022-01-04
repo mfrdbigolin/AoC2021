@@ -20,11 +20,15 @@ function solve(lst :: Vector{Int}, step_size = 1)
     end
 end
 
-if abspath(PROGRAM_FILE) == @__FILE__
+function main()
     usage_and_exit(length(ARGS) != 1)
 
     input_data = arrange(readlines(ARGS[1]), Int)
 
     println(solve(input_data))
     println(solve(input_data, 3))
+end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main()
 end

@@ -38,7 +38,7 @@ function update_lines!(lines :: Array{Line}, plane :: Array{Int64, 2})
         if slope in [-Inf, 0, Inf]
             plane[y₀:y₁, x₀:x₁] += ones(Int, (y₁ - y₀ + 1, x₁ - x₀ + 1))
         else
-            # Number of rotations
+            # Number of rotations.
             rot = Int64(div(-slope + 1, 2))
             plane[y₀:y₁, x₀:x₁] += rotr90(Diagonal(ones(Int, x₁ - x₀ + 1)), rot)
         end
@@ -48,13 +48,14 @@ end
 """Calculate the number of intersections of at least two <lines> in a ℤ
 cartesian plane.  Return both the axial and the total count."""
 function solve(lines :: Array{Line})
-    xₘₐₓ = max([max(first.(L)...) for L in lines]...)
-    yₘₐₓ = max([max(last.(L)...) for L in lines]...)
+    xₘₐₓ = max([max(first.(l)...) for l in lines]...)
+    yₘₐₓ = max([max(last.(l)...) for l in lines]...)
 
     plane = zeros(Int, (yₘₐₓ + 1, xₘₐₓ + 1))
 
-    # In the context of this day, I used the term “axial” as referring strictly
-    # to vertical and horizontal lines only.
+    #= In the context of this day, I used the term “axial” as referring strictly
+     = to vertical and horizontal lines only.
+     =#
     axials = filter(P -> P[1][1] == P[2][1] || P[1][2] == P[2][2], lines)
     update_lines!(axials, plane)
     axial_count = count(>=(2), plane)

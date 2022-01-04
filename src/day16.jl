@@ -6,7 +6,7 @@
 "Day Sixteen, Packet Decoder."
 
 
-#= This was a really fun day to write. Initially glossed over this day, because
+#= This was a really fun day to write.  Initially glossed over this day, because
  = I went to the movies.
  =#
 
