@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "General Utilities."
@@ -12,6 +12,7 @@ export arrange, usage_and_exit, bin2dec, ∑, array2num, find_neighbors, find_al
 
 arrange(vs :: Vector, dtype = String) = [parse(dtype, v) for v in vs]
 
+"If `is_exit`, print the usage of the program and, then, quit."
 function usage_and_exit(is_exit = true)
     if is_exit
         println("Usage: ./dayN [INPUT]")
@@ -20,12 +21,13 @@ function usage_and_exit(is_exit = true)
     end
 end
 
+"Convert integer binary digit array `B` to a decimal integer."
 bin2dec(B :: AbstractArray) = sum((*).(B, (^).(2, (length(B) - 1):-1:0)))
 
-"Summation of all integer numbers between [0, n]."
+"Summation of all integer numbers between [0, `n`]."
 ∑(n :: Int64) = (n^2 + n)/2
 
-"Transform an array <N> of digits in a number."
+"Transform an array `N` of digits in a number."
 array2num(N :: AbstractArray) = N .* (^).(10, (length(N) - 1):-1:0) |> sum
 
 "Find the neighbors (non-diagonal) of `(i, j)` in the matrix `A`."

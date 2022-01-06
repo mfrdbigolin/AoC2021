@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Two, Dive!"
@@ -12,6 +12,8 @@ using .Utils
 
 const DIRS = Dict("forward" => 1, "down" => im, "up" => -im)
 
+"""Return the product of the final horizontal position with the final depth,
+according to the `commands`.  Consider the aiming with `is_aiming`."""
 function solve(commands, is_aiming = false)
     coords = [DIRS[dir]*magn for (dir, magn) in commands]
 

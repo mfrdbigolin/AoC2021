@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Six, Lanternfish."
@@ -11,7 +11,7 @@ include("Utils.jl")
 using DelimitedFiles
 using .Utils
 
-"Calculate the number of fishes after <days> given a <fishpop>."
+"Calculate the number of fishes after `days` given a `fishpop`."
 function solve(fishpop :: Array{Int}, days :: Int64)
     ages = zeros(Int, 9)
 

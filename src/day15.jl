@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Fifteen, Chiton."
@@ -14,7 +14,7 @@ using DataStructures
 using DelimitedFiles
 using .Utils
 
-"Find the <cavern> path with the lowest risk; then, return this total risk."
+"Find the `cavern` path with the lowest risk; then, return this total risk."
 function solve(cavern :: Array{Int8, 2}) :: Int
     sizepaths = size(cavern)
 
@@ -52,7 +52,7 @@ function solve(cavern :: Array{Int8, 2}) :: Int
     return distance[sizepaths]
 end
 
-"Enlarge <cavern> to its actual dimension."
+"Enlarge `cavern` to its actual dimension."
 function enlarge(cavern :: Array{Int8, 2}) :: Array{Int8, 2}
     pattern = reshape([Int8(i + j) for i in 0:4 for j in 0:4], (5,5))
 

@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Seven, The Treachery of Whales."
@@ -12,7 +12,7 @@ using DelimitedFiles
 using Statistics
 using .Utils
 
-"Calculate the minimum amount of fuel used to align the <crabs>’ position."
+"Calculate the minimum amount of fuel used to align the `crabs`’ position."
 function solve1(crabs :: Array{Int64}) :: Int64
     median_crab = crabs |> median |> floor
 
@@ -23,7 +23,7 @@ end
  = user in Reddit pointed out, floor() isn’t always the right rounding.
  =#
 
-"""Calculate the minimum amount of fuel used to align the <crabs>’ position,
+"""Calculate the minimum amount of fuel used to align the `crabs`’ position,
 with an arithmetic series usage of fuel."""
 function solve2(crabs :: Array{Int64}) :: Int64
     mean_crab = crabs |> mean |> floor |> Int64

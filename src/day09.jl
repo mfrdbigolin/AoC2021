@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Nine, Smoke Basin."
@@ -15,7 +15,7 @@ include("Utils.jl")
 
 using .Utils
 
-"Calculate the sum of the risk levels of all low points in <heightmap>."
+"Calculate the sum of the risk levels of all low points in `heightmap`."
 function solve1(heightmap :: Matrix{Int})
     risklevel_count = 0
 
@@ -30,7 +30,7 @@ function solve1(heightmap :: Matrix{Int})
     return risklevel_count
 end
 
-"Calculate the product of the size of the three largest basins in <heightmap>."
+"Calculate the product of the size of the three largest basins in `heightmap`."
 function solve2(heightmap :: Matrix{Int})
     # Mark all locations with height nine as visited.
     unvisited = BitArray{2}([row .!= 9 for row in heightmap])

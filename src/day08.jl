@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Eight, Seven Segment Search."
@@ -15,7 +15,7 @@ include("Utils.jl")
 
 using .Utils
 
-"Count how many times the digits 1, 4, 7, or 8 appear in the <output> values."
+"Count how many times the digits 1, 4, 7, or 8 appear in the `output` values."
 solve1(output) = count.(d -> length(d) in [2,4,3,7], output) |> sum
 
 "Segments used by each digit."
@@ -24,7 +24,7 @@ const DIGITS = ([
     [1,2,4,6,7], [1,2,4:7...], [1,3,6], [1:7...], [1:4...,6,7]
 ])
 
-"Decode the wires mapping in the <pattern> and return the configuration."
+"Decode the wires mapping in the `pattern` and return the configuration."
 function decode_wires(pattern)
     conf = zeros(Int, 7)
 
@@ -51,6 +51,7 @@ function decode_wires(pattern)
     return conf
 end
 
+"Sum all the output values, given the `patterns` and the `digits`."
 function solve2(patterns, digits)
     sum_output = 0
 

@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Four, Giant Squid."
@@ -11,7 +11,7 @@ include("Utils.jl")
 using DelimitedFiles
 using .Utils
 
-"""Provided a <deck> and a set of <boards>, return all the winners from the
+"""Provided a `deck` and a set of `boards`, return all the winners from the
 first to the last."""
 function solve(deck :: Array{Int64}, boards :: Array{Array{Int64, 2}})
     winners = []

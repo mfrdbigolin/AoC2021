@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Five, Hydrothermal Venture."
@@ -13,7 +13,7 @@ using .Utils
 
 const Line = Tuple{Tuple{Int64, Int64}, Tuple{Int64, Int64}}
 
-"Calculate the endpoints of the <line>."
+"Calculate the endpoints of the `line`."
 function calculate_endpoints(line :: Line)
     x₀, x₁ = sort([first.(line)...]) .+ 1
     y₀, y₁ = sort([last.(line)...]) .+ 1
@@ -21,7 +21,7 @@ function calculate_endpoints(line :: Line)
     return ((x₀, y₀), (x₁, y₁))
 end
 
-"Calculate the slope of the <line>"
+"Calculate the slope of the `line`."
 function calculate_slope(line :: Line)
     x₀, x₁ = first.(line)
     y₀, y₁ = last.(line)
@@ -29,7 +29,7 @@ function calculate_slope(line :: Line)
     return (y₁ - y₀)/(x₁ - x₀)
 end
 
-"Superimpose the <lines> over the <plane> and update it (mutating)."
+"Superimpose the `lines` over the `plane` and update it (mutating)."
 function update_lines!(lines :: Array{Line}, plane :: Array{Int64, 2})
     for l in lines
         ((x₀, y₀), (x₁, y₁)) = calculate_endpoints(l)
@@ -45,7 +45,7 @@ function update_lines!(lines :: Array{Line}, plane :: Array{Int64, 2})
     end
 end
 
-"""Calculate the number of intersections of at least two <lines> in a ℤ
+"""Calculate the number of intersections of at least two `lines` in a ℤ
 cartesian plane.  Return both the axial and the total count."""
 function solve(lines :: Array{Line})
     xₘₐₓ = max([max(first.(l)...) for l in lines]...)

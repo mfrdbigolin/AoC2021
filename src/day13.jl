@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Thirteen, Transparent Origami."
@@ -12,7 +12,7 @@ include("Utils.jl")
 
 using .Utils
 
-"Fold the <dots> according to the <folds>’ instructions."
+"Fold the `dots` according to the `folds`’ instructions."
 function fold_dots(dots :: Set{Tuple{Int64, Int64}}, folds :: Array{Tuple{Char, Int64}}) :: Set{Tuple{Int64, Int64}}
     folded_dots = Set{Tuple{Int, Int}}(copy(dots))
 
@@ -31,14 +31,14 @@ function fold_dots(dots :: Set{Tuple{Int64, Int64}}, folds :: Array{Tuple{Char, 
     return folded_dots
 end
 
-"Calculate the number of <dots> after one <fold>."
+"Calculate the number of `dots` after one `fold`."
 function solve1(dots :: Set{Tuple{Int64, Int64}}, fold :: Tuple{Char, Int64}) :: Int64
     folded_dots = fold_dots(dots, [fold])
 
     return length(folded_dots)
 end
 
-"Apply the <folds> to the <dots> and print the secret code."
+"Apply the `folds` to the `dots` and print the secret code."
 function solve2(dots :: Set{Tuple{Int64, Int64}}, folds :: Array{Tuple{Char, Int64}})
     folded_dots = fold_dots(dots, folds)
 

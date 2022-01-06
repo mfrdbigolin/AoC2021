@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Ten, Syntax Scoring."
@@ -19,7 +19,7 @@ const OPENER = ['(', '[', '{', '<']
 const CLOSER = [')', ']', '}', '>']
 const CORRUPT_ADDEND = [3, 57, 1197, 25137]
 
-"""Calculate both the corruption score and the incompletion score of a <system>
+"""Calculate both the corruption score and the incompletion score of a `system`
 and return them, in this order, inside a tuple."""
 function solve(system :: Array{String}) :: Tuple{Int64, Int64}
     corrupt_score = 0

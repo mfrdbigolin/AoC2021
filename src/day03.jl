@@ -1,6 +1,6 @@
 #!/usr/bin/julia
 
-# Copyright (C) 2021 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
+# Copyright (C) 2021, 2022 Matheus Fernandes Bigolin <mfrdrbigolin@disroot.org>
 # SPDX-License-Identifier: MIT
 
 "Day Three, Binary Diagnostic."
@@ -10,8 +10,11 @@ include("Utils.jl")
 
 using .Utils
 
+"Calculate a rate with the binary `nums`, operation `op` and index `i`."
 calculate_rate(nums, op, i = 1) = op(sum(nums[:,i]), size(nums, 1)//2)
 
+"""Calculate a rating with the binary `nums`, the operation `op` and the index
+`i`."""
 function calculate_rating(nums, op, i = 1)
     mat_size = size(nums, 1)
 
@@ -24,6 +27,7 @@ function calculate_rating(nums, op, i = 1)
     return calculate_rating(triaged_nums, op, i + 1)
 end
 
+"Given the binary `nums`, calculate the power consumption of the submarine."
 function solve1(nums)
     k = size(nums, 2)
 
@@ -33,6 +37,7 @@ function solve1(nums)
     return ϵ*γ
 end
 
+"Given the binary `nums`, calculate the total rating of the submarine."
 function solve2(nums)
     O₂ = calculate_rating(nums, >=) |> bin2dec
     CO₂ = calculate_rating(nums, <) |> bin2dec
